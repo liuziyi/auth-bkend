@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auth Bkend</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+      
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+
+          <!-- Header -->
+          {{>nav}}
+
+          <!-- Content -->
+          <section>
+            <div class="row">
+              <div class="4u 12u$(small)">
+                <h1>Profile</h1>
+                <h3>Welcome {{profile.username}}</h3>
+                <a href="/account/logout">Logout</a>
+                <br/><br/>
+                <form action="/account/comment" method="post">
+                  <textarea name="text" placeholder="Comment"></textarea>
+                  <br/>
+                  <input type="submit" value="Submit Comment" />
+                </form>
+              </div>
+              <div class="6u 12u$(small)">
+                <h3>Your Comments</h3>
+                {{#comments}}
+                <div class="box">
+                  <p>{{text}}</p>
+                  <p>By {{profile}}</p>
+                </div>
+                {{/comments}}
+              </div>
+            </div>
+          </section> <!-- End of Content -->
+
+        </div> <!-- End of Inner -->
+      </div> <!-- End of Main -->
+
+    </div><!--End of Wrapper -->
+
+  </body>
+</html>
